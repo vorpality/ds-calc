@@ -1,0 +1,26 @@
+#store-distance-calculator {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#store-address-form {
+    margin-bottom: 20px;
+}
+
+#store-address-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#store-address-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+}
+
+#store-results {
+    margin-top: 20px;
+}
+
+#store-results div {
+    margin-bottom: 10px;
+}
