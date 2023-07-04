@@ -9,23 +9,9 @@ Author URI: YourAuthorURI
 */
 
 defined( 'ABSPATH' ) || exit;
-/*
-// Add a custom field to the REST API response
-function add_custom_field_to_rest_api($post, $field_name, $request) {
-    return get_field($field_name, $post->ID);
-}
 
-// Register the custom field for a specific post type
-function register_custom_field_for_rest_api() {
-    register_rest_field('store', 'address', array(
-        'get_callback' => 'add_custom_field_to_rest_api',
-        'schema' => null,
-    ));
-}
-add_action('rest_api_init', 'register_custom_field_for_rest_api');
-*/
 // Enqueue scripts and styles
-function enqueue_list_scripts() {
+function dsc_enqueue_scripts() {
     // Enqueue the script containing the storeDistanceCalculatorInit function
     $script_version = '1.0.0'; // Update the version number when you make changes to the script
     wp_enqueue_script( 'store-distance-calculator', plugin_dir_url( __FILE__ ) . 'js/store-distance-calculator.js', array( 'jquery' ), $script_version, true );
@@ -48,7 +34,7 @@ function enqueue_list_scripts() {
     $css_version = '1.0.0'; // Update the version number when you make changes to the CSS
     wp_enqueue_style( 'store-distance-calculator-style', plugin_dir_url( __FILE__ ) . 'css/store-distance-calculator.css', array(), $css_version );
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_list_scripts' );
+add_action( 'wp_enqueue_scripts', 'dsc_enqueue_scripts' );
 
 function getStoreAddresses() {
     $args = array(
